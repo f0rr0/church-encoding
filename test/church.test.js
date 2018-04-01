@@ -25,7 +25,7 @@ import {
   negate,
   isEqual,
   decodeInteger
-} from '..';
+} from '../lib';
 
 describe('Church Encoding for Booleans', () => {
   describe('T', () => {

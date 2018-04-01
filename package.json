@@ -18,22 +18,28 @@
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "husky": "^0.14.3",
+    "husky": "^0.15.0-rc.13",
     "jest": "^22.4.3",
     "jest-extended": "^0.6.0",
     "lint-staged": "^7.0.1",
+    "np": "^2.20.1",
     "prettier": "1.11.1",
     "regenerator-runtime": "^0.11.1",
     "rollup": "^0.57.1"
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "prepush": "yarn build && yarn test",
     "test": "jest --coverage",
     "format": "eslint --fix lib test",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "test:watch": "jest --coverage --watchAll"
+    "test:watch": "jest --coverage --watchAll",
+    "prepublishOnly": "yarn build",
+    "release": "np"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "jest": {
     "setupTestFrameworkScriptFile": "jest-extended"
