@@ -1,7 +1,13 @@
 language: node_js
 node_js:
   - lts/carbon
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+before_script:
+  - greenkeeper-lockfile-update
 script:
   - yarn test:ci
+after_script:
+  - greenkeeper-lockfile-upload
 after_success:
   - yarn codecov
