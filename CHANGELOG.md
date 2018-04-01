@@ -1,3 +1,11 @@
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/f0rr0/church-encoding/compare/v1.3.1...v1.3.2) (2018-04-01)
+
+
+### Bug Fixes
+
+* **list:** remove undefined ([3c65434](https://github.com/f0rr0/church-encoding/commit/3c65434))
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/f0rr0/church-encoding/compare/v1.3.0...v1.3.1) (2018-04-01)
 
