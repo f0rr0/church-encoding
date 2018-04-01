@@ -1,6 +1,6 @@
 {
   "name": "@f0rr0/church-encoding",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Church encoding for primitives and data structures",
   "main": "dist/church.cjs.js",
   "module": "dist/church.esm.js",
@@ -37,7 +37,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "semantic-release"
+    "release": "semantic-release pre -ci false && npm publish && semantic-release post --ci false"
   },
   "husky": {
     "hooks": {
