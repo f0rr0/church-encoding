@@ -1,0 +1,52 @@
+{
+  "name": "church-encoding",
+  "version": "1.0.0",
+  "description": "Church encoding primitives and data structures in javascript",
+  "main": "dist/church.cjs.js",
+  "module": "dist/church.esm.js",
+  "browser": "dist/church.umd.js",
+  "repository": "https://github.com/f0rr0/church-encoding",
+  "author": "Sid Jain",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "jest-extended": "^0.6.0",
+    "lint-staged": "^7.0.1",
+    "prettier": "1.11.1",
+    "regenerator-runtime": "^0.11.1",
+    "rollup": "^0.57.1"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "prepush": "yarn test",
+    "test": "jest --coverage",
+    "format": "eslint --fix lib test",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test:watch": "jest --coverage --watchAll"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-extended"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
