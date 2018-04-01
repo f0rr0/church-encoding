@@ -1,7 +1,7 @@
 {
-  "name": "church-encoding",
-  "version": "1.0.0",
-  "description": "Church encoding primitives and data structures in javascript",
+  "name": "@f0rr0/church-encoding",
+  "version": "0.0.0",
+  "description": "Church encoding for primitives and data structures",
   "main": "dist/church.cjs.js",
   "module": "dist/church.esm.js",
   "browser": "dist/church.umd.js",
@@ -30,7 +30,8 @@
   },
   "scripts": {
     "test": "jest",
-    "test:ci": "jest --coverage && codecov",
+    "test:ci": "jest --coverage",
+    "codecov": "codecov -f coverage/coverage-final.json",
     "format": "eslint --fix lib test",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
@@ -60,5 +61,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
