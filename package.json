@@ -40,7 +40,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "semantic-release --ci=false"
+    "release": "yarn test && semantic-release --ci=false"
   },
   "husky": {
     "hooks": {
