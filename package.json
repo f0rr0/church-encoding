@@ -37,7 +37,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "semantic-release pre -ci false && npm publish && semantic-release post --ci false"
+    "release": "semantic-release pre --ci false && npm publish && semantic-release post --ci false"
   },
   "husky": {
     "hooks": {
