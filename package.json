@@ -10,7 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "@semantic-release/changelog": "^2.0.1",
+    "@semantic-release/exec": "^2.2.3",
     "@semantic-release/git": "^4.0.1",
+    "@semantic-release/github": "^4.2.8",
     "@semantic-release/npm": "^3.2.4",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
@@ -40,7 +42,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "yarn test && semantic-release --ci=false"
+    "release": "semantic-release"
   },
   "husky": {
     "hooks": {
