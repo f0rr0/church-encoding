@@ -37,7 +37,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "semantic-release pre --debug=false && npm publish && semantic-release post --debug=false"
+    "release": "semantic-release --ci=false"
   },
   "husky": {
     "hooks": {
@@ -64,10 +64,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    }
   }
 }
