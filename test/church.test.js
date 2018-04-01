@@ -189,7 +189,7 @@ describe('Church Encoding for Lists', () => {
       const list = cons(10, cons(2, cons(5, cons(8, emptyList))));
       expect(length(emptyList)).toBe(zero);
       expect(length(list)).toBeFunction();
-      expect(decodeInteger(length(list))).toBeFunction(4);
+      expect(decodeInteger(length(list))).toBe(4);
     });
   });
 

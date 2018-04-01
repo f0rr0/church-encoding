@@ -28,7 +28,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepush": "yarn test",
+    "prepush": "yarn build && yarn test",
     "test": "jest --coverage",
     "format": "eslint --fix lib test",
     "build": "rollup -c",

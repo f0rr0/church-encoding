@@ -65,8 +65,8 @@ const filter = (f, list) =>
       )()
   )();
 const nth = (index, list) =>
-  IF(isZero(index), () => head(list), () => nth(dec(index), tail(tail)))();
-const length = list => () => IF(isEmpty(list), () => zero, () => inc(length(tail(list))))();
+  IF(isZero(index), () => head(list), () => nth(dec(index), tail(list)))();
+const length = list => IF(isEmpty(list), () => zero, () => inc(length(tail(list))))();
 
 const decodeBool = bool => bool(true, false);
 const decodeList = list =>
