@@ -1,6 +1,6 @@
 {
   "name": "@f0rr0/church-encoding",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Church encoding for primitives and data structures",
   "main": "dist/church.cjs.js",
   "module": "dist/church.esm.js",
@@ -23,10 +23,10 @@
     "jest": "^22.4.3",
     "jest-extended": "^0.6.0",
     "lint-staged": "^7.0.1",
-    "np": "^2.20.1",
     "prettier": "1.11.1",
     "regenerator-runtime": "^0.11.1",
-    "rollup": "^0.57.1"
+    "rollup": "^0.57.1",
+    "semantic-release": "^15.1.4"
   },
   "scripts": {
     "test": "jest",
@@ -37,7 +37,7 @@
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
-    "release": "np"
+    "release": "semantic-release"
   },
   "husky": {
     "hooks": {
