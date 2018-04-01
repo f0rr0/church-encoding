@@ -7,7 +7,7 @@
   "browser": "dist/church.umd.js",
   "repository": "https://github.com/f0rr0/church-encoding",
   "author": "Sid Jain",
-  "license": "wtfpl",
+  "license": "WTFPL",
   "devDependencies": {
     "@semantic-release/changelog": "^2.0.1",
     "@semantic-release/exec": "^2.2.3",
