@@ -1,3 +1,10 @@
+<h3 align="center">
+  <img align="center" src="assets/church.png" alt="Church logo" width=200
+  />
+</h3>
+<p align="center">
+Church encodings for JavaScript primitives
+</p>
 <p align="center">
   <a href="https://travis-ci.org/f0rr0/church-encoding">
     <img
