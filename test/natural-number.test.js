@@ -10,6 +10,12 @@ import {
   isEqualNat,
   mulNat,
   expNat,
+  isLessThanNat,
+  isLessThanEqualNat,
+  isGreaterThanNat,
+  isGreaterThanEqualNat,
+  divNat,
+  modNat,
   decodeNat
 } from '../lib';
 
@@ -109,6 +115,78 @@ describe('Church Encoding for Natural Numbers', () => {
       const three = incNat(two);
       expect(decodeNat(expNat(zeroNat, three))).toBe(1);
       expect(decodeNat(expNat(two, two))).toBe(4);
+    });
+  });
+
+  describe('isLessThanNat', () => {
+    it('is a function', () => {
+      expect(isLessThanNat).toBeFunction();
+    });
+    it('checks if the firs number is strictly less than the second', () => {
+      const two = incNat(incNat(zeroNat));
+      const three = incNat(two);
+      expect(isLessThanNat(two, two)).toBe(F);
+      expect(isLessThanNat(two, three)).toBe(T);
+    });
+  });
+
+  describe('isLessThanEqualNat', () => {
+    it('is a function', () => {
+      expect(isLessThanEqualNat).toBeFunction();
+    });
+    it('checks if the firs number is less than or equal to the second', () => {
+      const two = incNat(incNat(zeroNat));
+      const three = incNat(two);
+      expect(isLessThanEqualNat(two, two)).toBe(T);
+      expect(isLessThanEqualNat(two, three)).toBe(T);
+    });
+  });
+
+  describe('isGreaterThanNat', () => {
+    it('is a function', () => {
+      expect(isGreaterThanNat).toBeFunction();
+    });
+    it('checks if the firs number is strictly greater than the second', () => {
+      const two = incNat(incNat(zeroNat));
+      const three = incNat(two);
+      expect(isGreaterThanNat(two, two)).toBe(F);
+      expect(isGreaterThanNat(three, two)).toBe(T);
+    });
+  });
+
+  describe('isGreaterThanEqualNat', () => {
+    it('is a function', () => {
+      expect(isGreaterThanEqualNat).toBeFunction();
+    });
+    it('checks if the firs number is greater than or equal to the second', () => {
+      const two = incNat(incNat(zeroNat));
+      const three = incNat(two);
+      expect(isGreaterThanEqualNat(two, two)).toBe(T);
+      expect(isGreaterThanEqualNat(three, two)).toBe(T);
+    });
+  });
+
+  describe('divNat', () => {
+    it('is a function', () => {
+      expect(divNat).toBeFunction();
+    });
+    it('returns the quotient of natural number division', () => {
+      const two = incNat(incNat(zeroNat));
+      const four = incNat(incNat(two));
+      expect(decodeNat(divNat(four, two))).toBe(2);
+      expect(decodeNat(divNat(two, two))).toBe(1);
+    });
+  });
+
+  describe('modNat', () => {
+    it('is a function', () => {
+      expect(modNat).toBeFunction();
+    });
+    it('returns the remainder of natural number division', () => {
+      const two = incNat(incNat(zeroNat));
+      const three = incNat(two);
+      expect(decodeNat(modNat(three, two))).toBe(1);
+      expect(decodeNat(modNat(two, two))).toBe(0);
     });
   });
 });
