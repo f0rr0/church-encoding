@@ -1,3 +1,11 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/f0rr0/church-encoding/compare/v1.3.2...v1.4.0) (2018-04-02)
+
+
+### Features
+
+* **integers:** add more operations ([#6](https://github.com/f0rr0/church-encoding/issues/6)) ([da5fdfb](https://github.com/f0rr0/church-encoding/commit/da5fdfb))
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://github.com/f0rr0/church-encoding/compare/v1.3.1...v1.3.2) (2018-04-01)
 
