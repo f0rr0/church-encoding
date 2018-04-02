@@ -75,7 +75,7 @@ This is a thought exercise in functional programming to represent most of the ja
 
 ## Motivation
 
-I was informally introduced to this idea by watching [this talk](https://www.youtube.com/watch?v=XrNdvWqxBvA) by [John Hughes](http://www.cse.chalmers.se/~rjmh/) which is based on [his paper](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf). [This talk](https://www.youtube.com/watch?v=IOiZatlZtGU) by [Philip Walder](http://www.philip-walder.com/) brilliantly explains this in a more historical context. The [SICP book](https://mitpress.mit.edu/sicp/full-text/book/book.html) also introduced me to using lambdas and recursive constructs to define operations on lists. There are many more comprehensive implementations in typed functional languages but I wanted to see how far I could go without a formal type system and combinators. Ultimately, on a more philosophical note, this exercise sufficiently proves that:
+I was informally introduced to this idea by watching [this talk](https://www.youtube.com/watch?v=XrNdvWqxBvA) by [John Hughes](http://www.cse.chalmers.se/~rjmh/) which is based on [his paper](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf). [This talk](https://www.youtube.com/watch?v=IOiZatlZtGU) by [Philip Walder](http://homepages.inf.ed.ac.uk/wadler/) brilliantly explains this in a more historical context. The [SICP book](https://mitpress.mit.edu/sicp/full-text/book/book.html) also introduced me to using lambdas and recursive constructs to define operations on lists. There are many more comprehensive implementations in typed functional languages but I wanted to see how far I could go without a formal type system and combinators. Ultimately, on a more philosophical note, this exercise sufficiently proves that:
 
 > Mathematics is not invented. It is discovered.
 
@@ -106,14 +106,12 @@ There are 3 different builds in `commonjs`, `umd` and `esmodule` format, should 
   const one = inc(zero);
   const two = inc(one);
   const list = cons(zero, cons(one, cons(two, emptyList)));
-  
-  const listOfNative = map(decodeInteger, list);
-  console.log(decodeList(listOfNative)); // [0, 1, 2]
-  
+
+  console.log(decodeList(map(decodeInteger, list))); // [0, 1, 2]
+
   const doubleList = map(i => mul(two, i), list);
-  
-  const doubleListOfNative = map(decodeInteger, doubleList);
-  console.log(decodeList(doubleListOfNative)); // [0, 2, 4]
+
+  console.log(decodeList(map(decodeInteger, doubleList))); // [0, 2, 4]
 ```
 ## API
 
