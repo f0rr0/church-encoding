@@ -111,14 +111,4 @@ describe('Church Encoding for Natural Numbers', () => {
       expect(decodeNat(expNat(two, two))).toBe(4);
     });
   });
-
-  describe('decodeNat', () => {
-    it('is a function', () => {
-      expect(decodeNat).toBeFunction();
-    });
-    it('returns the native equivalent of the integer', () => {
-      expect(decodeNat(zeroNat)).toBe(0);
-      expect(decodeNat(incNat(incNat(incNat(zeroNat))))).toBe(3);
-    });
-  });
 });

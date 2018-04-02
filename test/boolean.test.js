@@ -1,4 +1,4 @@
-import { T, F, IF, AND, OR, NOT, decodeBool } from '../lib';
+import { T, F, IF, AND, OR, NOT } from '../lib';
 
 describe('Church Encoding for Booleans', () => {
   describe('T', () => {
@@ -59,16 +59,6 @@ describe('Church Encoding for Booleans', () => {
       expect(IF(NOT(T), true, false)).toBeFalse();
       expect(IF(NOT(F), true, false)).toBeTrue();
       expect(IF(NOT(AND(T, F)), true, false)).toBeTrue();
-    });
-  });
-
-  describe('decodeBool', () => {
-    it('is a function', () => {
-      expect(decodeBool).toBeFunction();
-    });
-    it('returns the native equivalent of the boolean', () => {
-      expect(decodeBool(T)).toBeTrue();
-      expect(decodeBool(F)).toBeFalse();
     });
   });
 });

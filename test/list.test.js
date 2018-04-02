@@ -108,14 +108,4 @@ describe('Church Encoding for Lists', () => {
       expect(decodeInteger(length(list))).toBe(4);
     });
   });
-
-  describe('decodeList', () => {
-    it('is a function', () => {
-      expect(decodeList).toBeFunction();
-    });
-    it('returns the native equivalent of the list', () => {
-      expect(decodeList(emptyList)).toEqual([]);
-      expect(decodeList(cons(1, cons(2, cons(3, emptyList))))).toEqual([1, 2, 3]);
-    });
-  });
 });

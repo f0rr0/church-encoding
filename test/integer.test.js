@@ -183,14 +183,4 @@ describe('Church Encoding for Integers', () => {
       expect(decodeInteger(exp(three, minusOne))).toBe(-1);
     });
   });
-
-  describe('decodeInteger', () => {
-    it('is a function', () => {
-      expect(decodeInteger).toBeFunction();
-    });
-    it('returns the native equivalent of the integer', () => {
-      expect(decodeInteger(zero)).toBe(0);
-      expect(decodeInteger(inc(inc(inc(zero))))).toBe(3);
-    });
-  });
 });
