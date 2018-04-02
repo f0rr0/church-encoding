@@ -3,8 +3,16 @@ import pkg from './package.json';
 const banner = `/* ${pkg.name} ${pkg.version} */`;
 const footer = '/* Follow me on Twitter @f0rr0 */';
 const name = (() => {
-  const names = pkg.name.split('-');
-  return names[0].concat(names.slice(1).map(str => str.charAt(0).toUpperCase() + str.slice(1)));
+  const names = pkg.name
+    .split('/')
+    .pop()
+    .split('-');
+  return names[0].concat(
+    names
+      .slice(1)
+      .map(str => str.charAt(0).toUpperCase() + str.slice(1))
+      .join('')
+  );
 })();
 
 export default {
