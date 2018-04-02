@@ -122,7 +122,7 @@ describe('Church Encoding for Natural Numbers', () => {
     it('is a function', () => {
       expect(isLessThanNat).toBeFunction();
     });
-    it('checks if the firs number is strictly less than the second', () => {
+    it('checks if the first number is strictly less than the second', () => {
       const two = incNat(incNat(zeroNat));
       const three = incNat(two);
       expect(isLessThanNat(two, two)).toBe(F);
@@ -134,7 +134,7 @@ describe('Church Encoding for Natural Numbers', () => {
     it('is a function', () => {
       expect(isLessThanEqualNat).toBeFunction();
     });
-    it('checks if the firs number is less than or equal to the second', () => {
+    it('checks if the first number is less than or equal to the second', () => {
       const two = incNat(incNat(zeroNat));
       const three = incNat(two);
       expect(isLessThanEqualNat(two, two)).toBe(T);
@@ -146,7 +146,7 @@ describe('Church Encoding for Natural Numbers', () => {
     it('is a function', () => {
       expect(isGreaterThanNat).toBeFunction();
     });
-    it('checks if the firs number is strictly greater than the second', () => {
+    it('checks if the first number is strictly greater than the second', () => {
       const two = incNat(incNat(zeroNat));
       const three = incNat(two);
       expect(isGreaterThanNat(two, two)).toBe(F);
@@ -158,7 +158,7 @@ describe('Church Encoding for Natural Numbers', () => {
     it('is a function', () => {
       expect(isGreaterThanEqualNat).toBeFunction();
     });
-    it('checks if the firs number is greater than or equal to the second', () => {
+    it('checks if the first number is greater than or equal to the second', () => {
       const two = incNat(incNat(zeroNat));
       const three = incNat(two);
       expect(isGreaterThanEqualNat(two, two)).toBe(T);

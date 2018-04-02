@@ -19,7 +19,13 @@ import {
   isEqual,
   mul,
   exp,
-  decodeInteger
+  isNegative,
+  isLessThan,
+  isLessThanEqual,
+  isGreaterThan,
+  isGreaterThanEqual,
+  decodeInteger,
+  decodeBool
 } from '../lib';
 
 describe('Church Encoding for Integers', () => {
@@ -182,6 +188,93 @@ describe('Church Encoding for Integers', () => {
       expect(decodeInteger(exp(two, two))).toBe(4);
       expect(decodeInteger(exp(two, minusOne))).toBe(1);
       expect(decodeInteger(exp(three, minusOne))).toBe(-1);
+    });
+  });
+
+  describe('isNegative', () => {
+    it('is a function', () => {
+      expect(isNegative).toBeFunction();
+    });
+    it('checks if the integer is negative', () => {
+      const two = inc(inc(zero));
+      const minusTwo = dec(dec(zero));
+      expect(isNegative(two)).toBe(F);
+      expect(isNegative(minusTwo)).toBe(T);
+      expect(isNegative(zero)).toBe(F);
+    });
+  });
+
+  describe('isLessThan', () => {
+    it('is a function', () => {
+      expect(isLessThan).toBeFunction();
+    });
+    it('checks if the first integer is strictly less than the second', () => {
+      const two = inc(inc(zero));
+      const three = inc(two);
+      const minusTwo = dec(dec(zero));
+      const minusThree = dec(minusTwo);
+      expect(decodeBool(isLessThan(two, two))).toBeFalse();
+      expect(decodeBool(isLessThan(two, three))).toBeTrue();
+      expect(decodeBool(isLessThan(minusThree, minusTwo))).toBeTrue();
+      expect(decodeBool(isLessThan(minusTwo, minusThree))).toBeFalse();
+      expect(decodeBool(isLessThan(minusThree, two))).toBeTrue();
+      expect(decodeBool(isLessThan(two, minusThree))).toBeFalse();
+    });
+  });
+
+  describe('isLessThanEqual', () => {
+    it('is a function', () => {
+      expect(isLessThanEqual).toBeFunction();
+    });
+    it('checks if the first integer is less than or equal to the second', () => {
+      const two = inc(inc(zero));
+      const three = inc(two);
+      const minusTwo = dec(dec(zero));
+      const minusThree = dec(minusTwo);
+      expect(decodeBool(isLessThanEqual(two, two))).toBeTrue();
+      expect(decodeBool(isLessThanEqual(two, three))).toBeTrue();
+      expect(decodeBool(isLessThanEqual(minusThree, minusTwo))).toBeTrue();
+      expect(decodeBool(isLessThanEqual(minusTwo, minusThree))).toBeFalse();
+      expect(decodeBool(isLessThanEqual(minusThree, two))).toBeTrue();
+      expect(decodeBool(isLessThanEqual(two, minusThree))).toBeFalse();
+      expect(decodeBool(isLessThanEqual(minusThree, minusThree))).toBeTrue();
+    });
+  });
+
+  describe('isGreaterThan', () => {
+    it('is a function', () => {
+      expect(isGreaterThan).toBeFunction();
+    });
+    it('checks if the first integer is strictly greater than the second', () => {
+      const two = inc(inc(zero));
+      const three = inc(two);
+      const minusTwo = dec(dec(zero));
+      const minusThree = dec(minusTwo);
+      expect(decodeBool(isGreaterThan(two, two))).toBeFalse();
+      expect(decodeBool(isGreaterThan(two, three))).toBeFalse();
+      expect(decodeBool(isGreaterThan(minusThree, minusTwo))).toBeFalse();
+      expect(decodeBool(isGreaterThan(minusTwo, minusThree))).toBeTrue();
+      expect(decodeBool(isGreaterThan(minusThree, two))).toBeFalse();
+      expect(decodeBool(isGreaterThan(two, minusThree))).toBeTrue();
+    });
+  });
+
+  describe('isGreaterThanEqual', () => {
+    it('is a function', () => {
+      expect(isGreaterThanEqual).toBeFunction();
+    });
+    it('checks if the first integer is greater than or equal to the second', () => {
+      const two = inc(inc(zero));
+      const three = inc(two);
+      const minusTwo = dec(dec(zero));
+      const minusThree = dec(minusTwo);
+      expect(decodeBool(isGreaterThanEqual(two, two))).toBeTrue();
+      expect(decodeBool(isGreaterThan(two, three))).toBeFalse();
+      expect(decodeBool(isGreaterThan(minusThree, minusTwo))).toBeFalse();
+      expect(decodeBool(isGreaterThan(minusTwo, minusThree))).toBeTrue();
+      expect(decodeBool(isGreaterThan(minusThree, two))).toBeFalse();
+      expect(decodeBool(isGreaterThan(two, minusThree))).toBeTrue();
+      expect(decodeBool(isGreaterThanEqual(minusThree, minusThree))).toBeTrue();
     });
   });
 });
