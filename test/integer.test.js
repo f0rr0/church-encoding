@@ -73,6 +73,7 @@ describe('Church Encoding for Integers', () => {
     it('increments an integer', () => {
       expect(inc(zero)).toBeFunction();
       expect(decodeInteger(inc(zero))).toBe(1);
+      expect(decodeInteger(inc(dec(dec(zero))))).toBe(-1);
     });
   });
 
