@@ -13,7 +13,7 @@ import {
   zero
 } from '../lib';
 
-describe('decode', () => {
+describe('Decode Church Encoding to Native', () => {
   describe('decodeBool', () => {
     it('is a function', () => {
       expect(decodeBool).toBeFunction();
