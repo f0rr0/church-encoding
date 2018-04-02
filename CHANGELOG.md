@@ -1,3 +1,11 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/f0rr0/church-encoding/compare/v1.4.0...v1.4.1) (2018-04-02)
+
+
+### Bug Fixes
+
+* **umd:** change name ([#8](https://github.com/f0rr0/church-encoding/issues/8)) ([307d742](https://github.com/f0rr0/church-encoding/commit/307d742))
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/f0rr0/church-encoding/compare/v1.3.2...v1.4.0) (2018-04-02)
 

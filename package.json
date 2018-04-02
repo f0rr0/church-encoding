@@ -1,6 +1,6 @@
 {
   "name": "@f0rr0/church-encoding",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Church encodings for primitives",
   "main": "dist/church.cjs.js",
   "module": "dist/church.esm.js",
