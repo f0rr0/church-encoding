@@ -90,7 +90,7 @@ yarn add @f0rr0/church-encoding@latest
 ```
 
 ## Usage
-There are 3 different builds in `commonjs`, `umd` and `esmodule` format, should you choose to have a preference or environment constraints. Normally, modern tools will automatically pick the `esmodule` build which enables tree-shaking.
+There are 3 different builds in `commonjs`, `umd` and `esmodule` format, should you have a preference or environment constraints. Normally, modern tools will automatically pick the `esmodule` build which enables tree-shaking.
 ```js
   import {
     cons,
