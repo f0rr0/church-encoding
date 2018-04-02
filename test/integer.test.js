@@ -269,11 +269,11 @@ describe('Church Encoding for Integers', () => {
       const minusTwo = dec(dec(zero));
       const minusThree = dec(minusTwo);
       expect(decodeBool(isGreaterThanEqual(two, two))).toBeTrue();
-      expect(decodeBool(isGreaterThan(two, three))).toBeFalse();
-      expect(decodeBool(isGreaterThan(minusThree, minusTwo))).toBeFalse();
-      expect(decodeBool(isGreaterThan(minusTwo, minusThree))).toBeTrue();
-      expect(decodeBool(isGreaterThan(minusThree, two))).toBeFalse();
-      expect(decodeBool(isGreaterThan(two, minusThree))).toBeTrue();
+      expect(decodeBool(isGreaterThanEqual(two, three))).toBeFalse();
+      expect(decodeBool(isGreaterThanEqual(minusThree, minusTwo))).toBeFalse();
+      expect(decodeBool(isGreaterThanEqual(minusTwo, minusThree))).toBeTrue();
+      expect(decodeBool(isGreaterThanEqual(minusThree, two))).toBeFalse();
+      expect(decodeBool(isGreaterThanEqual(two, minusThree))).toBeTrue();
       expect(decodeBool(isGreaterThanEqual(minusThree, minusThree))).toBeTrue();
     });
   });
