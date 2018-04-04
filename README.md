@@ -64,8 +64,7 @@ Church encodings for JavaScript primitives
 </p>
 
 # church-encoding
-
-This is a thought exercise in functional programming to represent most of the javascript primitives using only lambdas (anonymous functions). It's not intended to be used in any production user facing software.
+[Wikipedia Page](https://en.wikipedia.org/wiki/Church_encoding). This is a thought exercise in functional programming to represent most of the javascript primitives using only lambdas (anonymous functions). It's not intended to be used in any production user facing software.
 
 ## Motivation
 
