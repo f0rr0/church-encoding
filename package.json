@@ -38,7 +38,7 @@
     "test:ci": "jest --coverage",
     "codecov": "codecov -f coverage/coverage-final.json",
     "format": "eslint --fix lib test",
-    "build": "rollup -c",
+    "build": "rollup -c -m",
     "build:watch": "rollup -c -w",
     "test:watch": "jest --coverage --watchAll",
     "prepublishOnly": "yarn build",
