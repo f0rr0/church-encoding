@@ -2629,12 +2629,12 @@ jest-environment-node@^22.4.3:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
 
-jest-extended@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/jest-extended/-/jest-extended-0.7.0.tgz#aac1c83ae8878db01eba3955c4a8e54d4d754be3"
+jest-extended@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/jest-extended/-/jest-extended-0.9.0.tgz#f9637f9221c954fdf1d15ecd01e34da32e715028"
   dependencies:
-    chalk "^2.3.0"
     expect "^22.1.0"
+    jest-get-type "^22.4.3"
     jest-matcher-utils "^22.0.0"
 
 jest-get-type@^22.4.3:
