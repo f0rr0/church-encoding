@@ -9,7 +9,7 @@
   "author": "Sid Jain",
   "license": "WTFPL",
   "devDependencies": {
-    "@semantic-release/changelog": "^2.0.1",
+    "@semantic-release/changelog": "^3.0.5",
     "@semantic-release/exec": "^2.2.3",
     "@semantic-release/git": "^4.0.1",
     "@semantic-release/github": "^4.2.8",
